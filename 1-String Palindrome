@@ -1,0 +1,108 @@
+Namaskar doston! Swagat hai aap sabhi ka hamare channel "Pinaki Solutions" par, jahan hum programming aur technology ke concepts ko aasan aur interesting tareeke se samjhate hain.
+Aaj hum ek bahut hi simple aur interesting topic cover karenge: **Palindrome String Program** Python ka use karke. Ye program beginners ke liye ek perfect example hai, jo string manipulation aur logical thinking samajhne mein madad karega.
+Agar aap naye hain, to channel ko subscribe karein aur is video ko end tak zaroor dekhein, kyunki hum har ek step ko detail mein samjhenge. Chaliye, shuru karte hain!
+
+Iss tutorial mein hum samjhenge:
+✅ Palindrome kya hota hai?
+✅ Python mein ek Palindrome program kaise likhein.
+✅ Code ka step-by-step explanation.
+✅ Complexity analysis – Time aur Space Complexity.
+✅ Examples aur testing ke saath full clarity.
+
+👉 Code Used in Video: https://youtu.be/g-kLh_Z9mzM?feature=shared
+
+----------------------------------------------------------------------------------------------------------------------
+Step 1: Palindrome Kya Hai?
+
+Sabse pehle, palindrome ka matlab samajhte hain.
+
+Palindrome ek aisi string hoti hai jo ulta aur seedha dono tarah se same hoti hai. Matlab agar aap string ko reverse karenge, to uska output same hoga.
+
+Udaharan ke taur par:
+- "madam", "radar", "nitin" ye sab palindrome hain.
+- Lekin "hello" ya "python" palindrome nahi hain, kyunki ye reverse hone par alag dikhte hain.
+
+Toh aaj ke program ka aim hai ek string input lena aur check karna ki wo palindrome hai ya nahi.
+
+----------------------------------------------------------------------------------------------------------------------
+Step 2: Program Likhenge
+
+Ab hum Python program likhne wale hain. Maine ye program 3 simple steps mein divide kiya hai:
+
+1. **Input ko clean karna** – String ko chhoti akshar mein convert karenge aur spaces ya special characters ko hataenge.
+2. **Reverse karna** – String ko ulta karenge.
+3. **Compare karna** – Dekhenge ki original aur reversed string same hain ya nahi.
+
+Chaliye, isko code karke samajhte hain.
+
+----------------------------------------------------------------------------------------------------------------------
+Step 3: Step-by-Step Code Explanation
+
+# Step 1: String ko lowercase banayein
+def is_palindrome(s):
+    s = s.lower()  # Is step se string case-insensitive ho jayegi.
+
+    # Step 2: Special characters aur spaces ko remove karein
+    s = ''.join(filter(str.isalnum, s))  # Sirf alphabets aur numbers ko rakha gaya.
+
+    # Step 3: String ko reverse karein aur compare karein
+    return s == s[::-1]  # Agar string aur uska reverse same hai to true return karega.
+
+# Ab test karte hain program ko
+test_string = "A man, a plan, a canal, Panama"
+if is_palindrome(test_string):
+    print(f'"{test_string}" ek palindrome hai.')
+else:
+    print(f'"{test_string}" ek palindrome nahi hai.')
+
+----------------------------------------------------------------------------------------------------------------------
+
+Step 4: Har Step Ko Detail Mein Samajhna
+
+Step-by-step samajhte hain ki program kaise kaam kar raha hai:
+
+1. **Lowercase Conversion**:
+   - Humne `s.lower()` ka use karke string ko lowercase mein badal diya.
+   - Example: `"A man, a plan, a canal, Panama"` ko `"a man, a plan, a canal, panama"` mein convert kiya.
+
+2. **Special Characters Remove Karna**:
+   - Humne `filter(str.isalnum, s)` ka use kiya.
+   - Ye string se sabhi non-alphanumeric characters (jaise commas, spaces) ko hata deta hai.
+   - Result: `"amanaplanacanalpanama"`.
+
+3. **Reverse aur Compare**:
+   - String ko reverse karne ke liye humne slicing `[::-1]` ka use kiya.
+   - Reversed string: `"amanaplanacanalpanama"`.
+   - Compare karenge: `"amanaplanacanalpanama" == "amanaplanacanalpanama"`. Match karega, isliye output hoga **Palindrome**.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Step 5: Complexity Analysis
+
+Ab complexity analysis dekhte hain:
+
+1. **Time Complexity**:
+   - Lowercasing: \(O(n)\).
+   - Filtering special characters: \(O(n)\).
+   - Reversing the string: \(O(n)\).
+   - Total: \(O(n)\).
+
+2. **Space Complexity**:
+   - Cleaned string aur reversed string ke liye \(O(n)\) space lagta hai.
+   - Total: \(O(n)\).
+
+Toh ye program efficient hai aur bade inputs ke liye bhi kaam karega.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Step 6: Ek Chhota Test Karein
+
+Ek aur test karte hain:
+
+Input: `"Nitin"`
+- Lowercase: `"nitin"`.
+- Clean: `"nitin"`.
+- Reverse: `"nitin"`.
+- Compare: `"nitin" == "nitin"`. Output: **Palindrome**.
+
+Aur agar input `"Hello"` hota, to reverse hone par `"olleh"` hota, jo match nahi karta. Output: **Not a Palindrome**.
